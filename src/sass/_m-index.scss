@@ -1,0 +1,120 @@
+@charset "utf-8";
+@media#{$bp-pc} {
+	.contentsWrapper {
+		display: flex;
+		min-width: 769px;
+	}
+	.index {
+		margin: 0 auto;
+		padding-bottom: #{$h-header};
+		/*↑これがないとフッターにmain部分がはみ出る*/
+		margin-bottom: 32px;
+	}
+}
+/*---------------------
+	スライダーショー
+----------------------*/
+.swiper-container {
+	position: relative;
+	/* ← swiper.cssに含まれています */
+}
+.swiper-container:before {
+	content: "";
+	display: block;
+	padding-top: calc(9/16*100%);
+	/* 縦/横*100の値を書く */
+}
+.swiper-wrapper {
+	position: absolute;
+	/* ← swiper.cssと優先順位が干渉するときは工夫してください */
+	top: 0;
+	left: 0;
+}
+.swiper-wrapper img {
+	width: 100%;
+	min-width: 960px;
+}
+/*---------------------
+	infomation
+----------------------*/
+.index_infomation {
+	&_table {
+		margin: 0 auto;
+		@media#{$bp-tab} {
+			width: 95%;
+		}
+		@media#{$bp-pc} {
+			width: 95%;
+		}
+	}
+}
+/*---------------------
+	introduction
+----------------------*/
+.ly_introduction {
+	&_container {
+		margin: 0 auto;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		&_box {
+			@include box;
+			& img {
+				height: 100%;
+				height: 120px;
+				width: 160px;
+				object-fit: cover;
+				@media#{$bp-tab} {
+					height: 240px;
+					width: 320px;
+				}
+				@media#{$bp-pc} {
+					height: 240px;
+					width: 320px;
+				}
+			}
+		}
+	}
+}
+/*---------------------
+	event
+----------------------*/
+.ly_event_container {
+	@include dfwrap;
+	&_box {
+		@include box;
+	}
+	&_tit {
+		white-space: nowrap; //大事！
+	}
+	&_img img {
+		height: 100%;
+		max-height: 168px;
+		object-fit: cover;
+	}
+	@media#{$bp-pc} {
+		flex-wrap: nowrap;
+		&_img img {
+			height: 160px;
+			object-fit: cover;
+		}
+	}
+}
+/*---------------------
+	index_price
+----------------------*/
+.index_price_table {
+	margin: 0 auto;
+	border-collapse: collapse;
+	margin-bottom: 32px;
+	@media#{$bp-tab} {
+		width: 95%;
+	}
+	@media#{$bp-pc} {
+		width: 95%;
+	}
+}
+.index_price_table, th, td {
+	border: 1px solid #333;
+	padding: 8px;
+}

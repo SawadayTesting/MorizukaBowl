@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="森塚ボウルへようこそ！">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--twitter card,ogp tag-->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="ユーザー名" />
+<meta property="og:url" content="記事のURL" />
+<meta property="og:title" content="記事のタイトル" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="画像URL" />
+<title>団体予約</title>
+<link href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" rel="stylesheet">
+<!--fontAwesome-->
+<link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+	<div class="contentsWrapper"> <header class="header">
+	<!-- 他所からの引用なので、命名規則に必ずしも従わない -->
+	<!-- sp-以下はスマホ版のみ表示。-->
+	<div class="sp-header-logo-menu">
+		<div id="nav-drawer">
+			<input id="nav-input" type="checkbox" class="nav-unshown">
+			<label id="nav-open" for="nav-input"><span></span></label>
+			<label class="nav-unshown" id="nav-close" for="nav-input"></label>
+			<div id="nav-content">
+				<ul>
+					<li><a href="index.html">森塚ボウル</a></li>
+					<li><a href="facility.html">施設案内</a></li>
+					<li><a href="restaurant.html">レストラン</a></li>
+					<li><a href="event.html">イベント一覧</a></li>
+					<li><a href="reservations.html">団体予約</a></li>
+					<li><a href="access.html">アクセス</a></li>
+				</ul>
+			</div>
+		</div>
+		<!--/.nav-drawer-->
+		<div class="logo-area">
+			<h1 class="logo-area_headding1 reset">
+				<a href="index.html"><img class="logo-area_logo" src="image/morizuka-bowling-logo/logo(normal).png" alt="森塚ボウルのロゴ"></a>
+			</h1>
+		</div>
+		<!--/.logo-area-->
+	</div>
+	<!--/.sp-header-logo-menu-->
+	<nav class="pc-nav">
+		<ul class="pc-nav__gnav">
+			<li><a href="index.html">森塚ボウル<br>トップページ</a></li>
+			<li><a href="facility.html">施設案内</a></li>
+			<li><a href="restaurant.html">レストラン</a></li>
+			<li><a href="event.html">イベント一覧</a></li>
+			<li><a href="reservations.html">団体予約</a></li>
+			<li><a href="access.html">アクセス</a></li>
+		</ul>
+	</nav>
+</header>
+		<!--/.header -->
+		<main class="reservations sp-headerSpace">
+			<h2>団体予約</h2>
+			<p>ボウリングレーンの時間貸し、VS 嵐コーナー、カフェテリアを<br>ご利用のお客様は、こちらから必須項目をご入力ください。</p>
+			<p><small><span class=uq-red>※</span>団体予約は３名以上から受け付けさせていただきます。</small></p>
+			<form class="contactForm" action="sample.php" method="post">
+				<dl>
+					<dt><label for="your-name">名前（必須）:</label></dt>
+					<dd><input class="inputArea" type="text" name="your-name" id="your-name" placeholder="全角で入力してください。" required></dd>
+					<dt><label for="your-kana">フリガナ（任意）：</label></dt>
+					<dd><input class="inputArea" type="text" name="your-kana" id="your-kana" placeholder="全角カタカナで入力してください。"></dd>
+					<dt><label for="your-tel">電話番号（必須）：</label></dt>
+					<dd><input class="inputArea" type="tel" name="your-tel" id="your-tel" placeholder="ハイフンなしの半角数字で入力してください。" required></dd>
+					<dt><label for="your-email">メールアドレス（必須）：</label></dt>
+					<dd><input class="inputArea" type="email" name="your-email" id="your-email" placeholder="半角で入力してください。" required></dd>
+					<dt><label for="your-reservation">ご予約内容（必須）：</label></dt>
+					<dd><label><input class="radio" type="radio" name="your-reservation" id="your-reservation" value="your-reservation" required>時間貸し</label></dd>
+					<dd><label><input class="radio" type="radio" name="your-reservation" id="your-resevation" value="your-reservation" required>VS 嵐</label></dd>
+					<dd><label><input class="radio" type="radio" name="your-reservation" id="your-resevation" value="your-reservation" required>カフェテリア</label></dd>
+					<dt><label for="date">ご利用日時（必須）：</label></dt>
+					<dd><input id="date" type="date" name="calendar" max="9999-12-31" value="date" required>
+					</dd>
+					<dt><label for="group-members">ご利用人数（必須）：</label></dt>
+					<dd><select name="group-members" id="group-members" required>
+							<option value="group-members" selected>選択して下さい</option>
+							<option value="group-members">3</option>
+							<option value="group-members">4</option>
+							<option value="group-members">5</option>
+							<option value="group-members">6</option>
+							<option value="group-members">7</option>
+							<option value="group-members">8</option>
+							<option value="group-members">9名以上</option>
+						</select></dd>
+				</dl>
+				<input class="contactForm__button" type="submit" name="button" value="送信">
+			</form>
+		</main>
+	</div>
+	<!--/.contentsWrapper--> <footer class="ly_footer bl_footer">
+	<div class="ly_footer_inner">
+		<div class="ly_footer_containerLink">
+			<div class="ly_footer_iconContainer bl_footer_iconContainer">
+				<p class="bl_footer_tit">森塚ボウル<br class="tab-hidden pc-hidden">公式SNS</p>
+				<div class="ly_footer_iconContainerInner">
+					<!--以下twitterのボタン-->
+					<p class="bl_footer_copyTwitter reset"><a href="https://twitter.com/GO54352960" target="_blank">
+							<i class="bl_footer_icon bl_footer_iconTwitter fab fa-twitter-square"></i></a></p>
+					<!--以下Facebookのボタン-->
+					<p class="bl_footer_copyFacebook reset"><a href="https://www.facebook.com/profile.php?id=100048348480639" target="_blank">
+							<i class="bl_footer_icon bl_footer_iconFacebook fab fa-facebook-square"></i></a></p>
+					<!--以下Instagramのボタン-->
+					<p class="bl_footer_copyInstagram reset"><a href="https://www.instagram.com/?hl=ja" target="_blank">
+							<i class="bl_footer_icon bl_footer_iconInstagram fab fa-instagram"></i></a></p>
+				</div>
+				<!-- /.ly_footer_iconContainerInner -->
+			</div>
+			<!-- /.ly_footer_iconContainer -->
+			<div class="ly_footer_accessContainer">
+				<p class="bl_footer_tit">森塚ボウルへ<br class="tab-hidden pc-hidden">アクセス</p>
+				<!--アイコンはアクセスへのリンク-->
+				<p class="bl_footer_access_img"><a href="access.html"><img src="image/gmap-icon/icon_mappin32_3.svg" alt="アクセスへのリンク"></a></p>
+			</div>
+			<!-- /.ly_footer_accessContainer -->
+			<div class="ly_footer_reservationContainer">
+				<p class="bl_footer_tit">団体予約<br class="tab-hidden pc-hidden">はこちら</p>
+				<!--アイコンは団体予約へのリンク-->
+				<p class="bl_footer_access_img"><a href="reservations.html"><i class="far fa-calendar-alt"></i></a></p>
+			</div>
+			<!-- /.ly_footer_reservationContainer -->
+		</div>
+		<!-- /.ly_footer_containerLink -->
+	</div>
+	<!-- /.footer_inner -->
+	<div class="ly_footer_info bl_footer_info">
+		<div class="tab-flexRow">
+			<p class="ly_footer_contactCopy uq-tac">森塚ボウルへのお問い合わせはこちら</p>
+			<div class="ly_footer_phoneNumberBox">
+				<i class="ly_footer_info_icon bl_footer_info_icon fas fa-phone-alt"></i>
+				<p class="ly_footer_info_phoneNumber bl_footer_info_phoneNumber reset">011-123-4567</p>
+			</div>
+			<!-- /.ly_footer_phoneNumberBox -->
+		</div>
+		<!-- /.tab-flexRow -->
+		<p class="uq-tac">受付時間：平日・土日・祝日<br class="tab-hidden pc-hidden">ともに10:00～17:00</p>
+	</div>
+	<!--/.footer_info-->
+	<div class="ly_footer_info">
+		<div class="tab-flexRow">
+			<p class="ly_footer_info_busCopy uq-tac">送迎バスあり（20名程度）</p>
+			<p class="ly_footer_info_address bl_footer_info_address uq-tac">住所:札幌市中央区南9条西3丁目6-10</p>
+		</div>
+		<!--/.tab-flexRow-->
+		<p class="uq-tac">レーン数:２０<small>(特別レーン２を含む)</small></p>
+	</div>
+	<!-- /.ly_footer_info -->
+	<div class="ly_footer_inner">
+		<p class="ly_footer_copyrights uq-tac reset"><small>&copy;Morizuka bowl inc.</small></p>
+	</div>
+	<!-- /.footer_inner -->
+</footer>
+	<!-- /.footer -->
+</body>
+
+</html>

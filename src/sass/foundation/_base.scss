@@ -1,0 +1,103 @@
+@charset "utf-8";
+/*==================================
+  共通部分 - 主にタイプセレクタへの指定
+===================================*/
+/*TODOフォント選択理由にあわせ、適宜調整*/
+body {
+	font-family: 'Lato', 'Noto Sans JP', '游ゴシック Medium', '游ゴシック体', 'Yu Gothic Medium', YuGothic, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', arial, helvetica, sans-serif;
+	background-color: #{$bgc-body};
+	overflow-x: hidden;
+}
+p {
+	color: #{$c-font}; //黒字見やすく
+}
+a {
+	display: block;
+	text-decoration: none;
+	color: #333;//後の上書きOK
+}
+/*margin,paddingをリセット*/
+//@extend %reset; で継承できます
+//reset = m0; p0;　です
+.reset {
+	@include reset;
+}
+ul, ol {
+	@extend .reset;
+	list-style-type: none;
+}
+dl {
+	@extend ul, ol;
+	dt, dd {
+		@extend .reset;
+	}
+}
+/*フルードイメージ化*/
+img {
+	vertical-align: bottom;
+	max-width: 100%;
+	height: auto;
+}
+section {
+	margin-bottom: 40px;
+}
+main {
+	margin-bottom: 40px;
+	/*footerとコンテンツの余白を取るため。*/
+}
+@media #{$bp-sp} {
+	/*レスポンシブに重要*/
+	.sp-contShrink {
+		width: 95%;
+		margin: 0 auto;
+	}
+}
+@media #{$bp-tab} {
+	p {
+		font-size: 1.125em;
+	}
+	.tab-mr12 {
+		margin-right: 12px;
+	}
+	.tab-contShrink {
+		/*レスポンシブに重要*/
+		width: 95%;
+		margin: 0 auto;
+	}
+	.tab-hidden {
+		display: none;
+	}
+}
+@media #{$bp-pc} {
+		p {
+		font-size: 1.125em;
+	}
+	.pc-mr20 {
+		margin-right: 20px;
+	}
+	.pc-contShrink {
+		/*レスポンシブに重要*/
+		width: 100%;
+		max-width: 960px;
+		padding: 0 15px;
+		margin: 0 auto;
+	}
+	.pc-hidden {
+		display: none;
+	}
+}
+.uq-mb0 {
+	margin-bottom: 0;
+}
+.uq-mb24 {
+	margin-bottom: 24px;
+}
+.uq-mbLarge {
+	margin-bottom: 100px;
+}
+.uq-red {
+	color: #f00;
+}
+.uq-tac {
+	text-align: center;
+}

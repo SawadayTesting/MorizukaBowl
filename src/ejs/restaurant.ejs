@@ -1,0 +1,41 @@
+﻿<%# metaにページの基本情報を指定 %> <%# CSSが一枚の場合、pathは触らなくて大丈夫です %> <%# 下層ページにCSSを個別に当てる場合、値を'..'にして下さい(代入先参照) %> <%
+const meta = {
+  title: 'カフェテリア',
+  description: '森塚ボウルへようこそ！',
+  path: '.'
+};
+%> <%- include('common/_meta',{meta:meta}) %>
+
+<body>
+	<div class="contentsWrapper"> <%- include('common/_header') %>
+		<!--/.header -->
+		<main class="restaurant sp-contShrink tab-contShrink pc-contShrink sp-headerSpace">
+			<h2>レストラン</h2>
+			<p>ボウリングの後には、お食事はいかがですか？</p>
+			<p class="uq-mbLarge">併設のカフェテリアではタピオカドリンクが人気です！</p>
+			<h3>メニュー</h3>
+			<p>レストラン＆カフェテリアの売れ筋メニューを紹介します。</p>
+			<div class="ly_responsiveFlex uq-mbLarge">
+				<p><img src="image/tapioca/0e174484680eba63d040602de247efd3_s.jpg" alt="タピオカドリンクの画像"></p>
+				<p>甘さ控えめ、女性にもオススメの<br class="tab-hidden pc-hidden">ホットタピオカドリンクです。<br class="tab-hidden pc-hidden">美味しさを保ちつつ、カロリーを抑えました。</p>
+			</div>
+			<!-- /.responsiveFlex -->
+			<div class="ly_responsiveFlex uq-mbLarge">
+				<p><img src="image/foods/food08.jpg" alt="ハンバーグプレートの画像"></p>
+				<p>ボリューム満点！<br class="tab-hidden pc-hidden">森塚ボウル自慢のハンバーグプレートを、ぜひご賞味ください。</p>
+			</div>
+			<!-- /.responsiveFlex -->
+			<div class="ly_responsiveFlex uq-mbLarge">
+				<p><img src="image/foods/food07.jpg" alt="カレーの画像"></p>
+				<p>スパイスにこだわった本格カレー。<br class="tab-hidden pc-hidden">小さなお子様も安心です。</p>
+			</div>
+			<!-- /.responsiveFlex -->
+		</main>
+	</div>
+	<!--/.contentsWrapper--> <%- include('common/_footer') %>
+	<!-- /.footer -->
+	<script src="js/swiper.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>

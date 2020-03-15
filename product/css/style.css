@@ -1,0 +1,671 @@
+@charset "UTF-8";
+/*!==================================
+	このCSSはSassで記述されていますので
+	直接編集しないで下さい！
+==================================*/
+@import url(sanitize.css);
+@import url(swiper.css);
+@import url(bootstrap.css);
+/*==================================
+  共通部分 - 主にタイプセレクタへの指定
+===================================*/
+body {
+	background-color: #f3f1e8;
+	font-family: 'Lato', 'Noto Sans JP', '游ゴシック Medium', '游ゴシック体', 'Yu Gothic Medium', YuGothic, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', arial, helvetica, sans-serif;
+	overflow-x: hidden;
+}
+p {
+	color: #333;
+}
+a {
+	color: #333;
+	display: block;
+	text-decoration: none;
+}
+/*margin,paddingをリセット*/
+.reset, ul, dl, ol, dl dt, dl dd {
+	margin: 0;
+	padding: 0;
+}
+ul, dl, ol, dl {
+	list-style-type: none;
+}
+/*フルードイメージ化*/
+img {
+	height: auto;
+	max-width: 100%;
+	vertical-align: bottom;
+}
+section {
+	margin-bottom: 40px;
+}
+main {
+	margin-bottom: 40px;
+	/*footerとコンテンツの余白を取るため。*/
+}
+@media screen and (max-width: 480px) {
+	/*レスポンシブに重要*/
+	.sp-contShrink {
+		margin: 0 auto;
+		width: 95%;
+	}
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+	p {
+		font-size: 1.125em;
+	}
+	.tab-mr12 {
+		margin-right: 12px;
+	}
+	.tab-contShrink {
+		margin: 0 auto;
+		/*レスポンシブに重要*/
+		width: 95%;
+	}
+	.tab-hidden {
+		display: none;
+	}
+}
+@media screen and (min-width: 769px) {
+	p {
+		font-size: 1.125em;
+	}
+	.pc-mr20 {
+		margin-right: 20px;
+	}
+	.pc-contShrink {
+		margin: 0 auto;
+		max-width: 960px;
+		padding: 0 15px;
+		/*レスポンシブに重要*/
+		width: 100%;
+	}
+	.pc-hidden {
+		display: none;
+	}
+}
+.uq-mb0 {
+	margin-bottom: 0;
+}
+.uq-mb24 {
+	margin-bottom: 24px;
+}
+.uq-mbLarge {
+	margin-bottom: 100px;
+}
+.uq-red {
+	color: #f00;
+}
+.uq-tac {
+	text-align: center;
+}
+/*==================================
+  header - ページ共通
+===================================*/
+.header {
+	background: #ccc;
+	padding: 10px;
+	width: 100%;
+}
+.ly-header_linkContainer {
+	width: 80px;
+}
+.ly-header_linkContainer .spTab-header_accessLink_Img {
+	margin-right: 40px;
+}
+.spTab-header_accessLink {
+	margin: 0;
+	padding: 0;
+}
+.spTab-header_accessLink_Img {
+	height: 32px;
+	order: 1;
+	width: 32px;
+}
+/*--------------------------
+	スマホ版ハンバーガーメニュー
+---------------------------*/
+@media screen and (min-width: 769px) {
+	#nav-drawer {
+		display: none;
+	}
+}
+#nav-drawer {
+	position: relative;
+}
+/*チェックボックス等は非表示に*/
+.nav-unshown {
+	display: none;
+}
+/*アイコンのスペース*/
+#nav-open {
+	display: inline-block;
+	height: 22px;
+	order: 10;
+	vertical-align: middle;
+	width: 30px;
+}
+/*ハンバーガーの形をCSSで表現*/
+#nav-open span, #nav-open span:before, #nav-open span:after {
+	background: #555;
+	/*長さ*/
+	border-radius: 3px;
+	content: '';
+	cursor: pointer;
+	display: block;
+	height: 3px;
+	position: absolute;
+	/*線の太さ*/
+	width: 25px;
+}
+#nav-open span:before {
+	bottom: -8px;
+}
+#nav-open span:after {
+	bottom: -16px;
+}
+/*閉じる用の薄黒箇所*/
+#nav-close {
+	background: black;
+	display: none;
+	height: 100%;
+	left: 0;
+	opacity: 0;
+	position: fixed;
+	top: 0;
+	transition: .3s ease-in-out;
+	width: 100%;
+	z-index: 99;
+}
+/*メニューの中身*/
+#nav-content {
+	background: #fff;
+	/*最大幅（お好みで調整を）*/
+	height: 100%;
+	left: 0;
+	max-width: 330px;
+	overflow: auto;
+	position: fixed;
+	top: 0;
+	transform: translateX(-105%);
+	transition: .3s ease-in-out;
+	width: 90%;
+	z-index: 9999;
+}
+#nav-content ul, #nav-content dl {
+	padding: 20px;
+}
+#nav-content li {
+	font-size: 1.1em;
+	margin-bottom: 10px;
+}
+#nav-content a {
+	color: #333;
+	text-decoration: none;
+}
+/*チェックがついたら表示させる*/
+#nav-input:checked ~ #nav-close {
+	display: block;
+	opacity: .5;
+}
+#nav-input:checked ~ #nav-content {
+	box-shadow: 6px 0 25px rgba(0, 0, 0, 0.15);
+	transform: translateX(0%);
+}
+.sp-header-logo-menu {
+	-ms-flex-pack: justify;
+	align-items: flex-start;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+/*ロゴやサイトタイトルをレイアウト*/
+.logo-area {
+	order: -10;
+}
+.logo-area_logo {
+	order: -10;
+	width: 192px;
+}
+/*--------------------------
+	PC版ナビ
+---------------------------*/
+.pc-nav__gnav {
+	display: none;
+}
+@media screen and (max-width: 480px) {
+	.contentsWrapper {
+		position: relative;
+	}
+	.header {
+		height: 72px;
+		position: fixed;
+		top: 0;
+		z-index: 99;
+	}
+	.sp-headerSpace {
+		padding-top: 72px;
+	}
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+	.contentsWrapper {
+		position: relative;
+	}
+	.header {
+		height: 72px;
+		position: fixed;
+		top: 0;
+		z-index: 99;
+	}
+	.sp-headerSpace {
+		padding-top: 72px;
+	}
+}
+@media screen and (min-width: 769px) {
+	.header {
+		padding: 24px;
+		width: 180px;
+	}
+	h1 img {
+		width: 180px;
+	}
+	.pc-nav {
+		position: -webkit-sticky;
+		position: sticky;
+		top: 0;
+		width: 180px;
+	}
+	.pc-nav__gnav {
+		display: block;
+		padding-top: -24px;
+	}
+	.pc-nav__gnav li {
+		font-size: 1.125em;
+		padding-top: 24px;
+	}
+	.pc-nav__gnav a {
+		color: #333;
+		text-decoration: none;
+	}
+	.pc-nav__gnav a:hover {
+		color: red;
+		opacity: .5;
+	}
+}
+/*==================================
+  index - main
+===================================*/
+@media screen and (min-width: 769px) {
+	.contentsWrapper {
+		display: flex;
+		min-width: 769px;
+	}
+	.index {
+		margin: 0 auto;
+		/*↑これがないとフッターにmain部分がはみ出る*/
+		margin-bottom: 32px;
+		padding-bottom: 72px;
+	}
+}
+/*---------------------
+	スライダーショー
+----------------------*/
+.swiper-container {
+	position: relative;
+	/* ← swiper.cssに含まれています */
+}
+.swiper-container:before {
+	content: "";
+	display: block;
+	padding-top: calc(9/16*100%);
+	/* 縦/横*100の値を書く */
+}
+.swiper-wrapper {
+	left: 0;
+	position: absolute;
+	/* ← swiper.cssと優先順位が干渉するときは工夫してください */
+	top: 0;
+}
+.swiper-wrapper img {
+	min-width: 960px;
+	width: 100%;
+}
+/*---------------------
+	infomation
+----------------------*/
+.index_infomation_table {
+	margin: 0 auto;
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+	.index_infomation_table {
+		width: 95%;
+	}
+}
+@media screen and (min-width: 769px) {
+	.index_infomation_table {
+		width: 95%;
+	}
+}
+/*---------------------
+	introduction
+----------------------*/
+.ly_introduction_container {
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	width: 100%;
+}
+.ly_introduction_container_box {
+	background-color: #fff;
+	width: 50%;
+}
+.ly_introduction_container_box img {
+	-o-object-fit: cover;
+	height: 100%;
+	height: 120px;
+	object-fit: cover;
+	width: 160px;
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+	.ly_introduction_container_box img {
+		height: 240px;
+		width: 320px;
+	}
+}
+@media screen and (min-width: 769px) {
+	.ly_introduction_container_box img {
+		height: 240px;
+		width: 320px;
+	}
+}
+/*---------------------
+	event
+----------------------*/
+.ly_event_container {
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-wrap: wrap;
+}
+.ly_event_container_box {
+	background-color: #fff;
+	width: 50%;
+}
+.ly_event_container_tit {
+	white-space: nowrap;
+}
+.ly_event_container_img img {
+	-o-object-fit: cover;
+	height: 100%;
+	max-height: 168px;
+	object-fit: cover;
+}
+@media screen and (min-width: 769px) {
+	.ly_event_container {
+		flex-wrap: nowrap;
+	}
+	.ly_event_container_img img {
+		-o-object-fit: cover;
+		height: 160px;
+		object-fit: cover;
+	}
+}
+/*---------------------
+	index_price
+----------------------*/
+.index_price_table {
+	border-collapse: collapse;
+	margin: 0 auto;
+	margin-bottom: 32px;
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+	.index_price_table {
+		width: 95%;
+	}
+}
+@media screen and (min-width: 769px) {
+	.index_price_table {
+		width: 95%;
+	}
+}
+.index_price_table, th, td {
+	border: 1px solid #333;
+	padding: 8px;
+}
+/*==================================
+  facility - main
+===================================*/
+/*==================================
+  cafeteria - main
+===================================*/
+/*==================================
+  event - main
+===================================*/
+@media screen and (min-width: 769px) {
+	.eventList {
+		margin: 0 auto;
+		max-width: 960px;
+		padding: 0 15px;
+		/*優先度の問題で、個別に記述。*/
+		width: 100%;
+	}
+	.eventList img {
+		max-width: 640px;
+		width: 100%;
+	}
+}
+/*==================================
+  reservations - main
+===================================*/
+.reservations {
+	margin: 24px auto;
+	max-width: 720px;
+	padding-bottom: 72px;
+	width: 95%;
+}
+.contactForm .inputArea {
+	height: 20px;
+	width: 280px;
+}
+.contactForm dt {
+	margin-bottom: 16px;
+}
+.contactForm dd {
+	margin-bottom: 16px;
+}
+.contactForm #group-members {
+	background-color: #fff;
+}
+.contactForm__button {
+	background: linear-gradient(180deg, whitesmoke 0%, #dfdfdf 100%);
+	height: 50px;
+	width: 200px;
+}
+/*==================================
+  access - main
+===================================*/
+.gmapContainer {
+	height: 0;
+	overflow: hidden;
+	padding-bottom: 75%;
+	position: relative;
+}
+.gmapContainer iframe {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.access {
+	margin: 0 auto;
+	max-width: 720px;
+	width: 100%;
+}
+/*==================================
+  footer - ページ共通
+===================================*/
+/*フッターのレイアウト*/
+.ly_footer {
+	background-color: darkgray;
+	padding-top: 20px;
+	width: 100%;
+}
+.ly_footer_inner {
+	padding: 8px;
+}
+.ly_footer_containerLink {
+	align-items: baseline;
+	display: flex;
+	justify-content: space-around;
+}
+.ly_footer_iconContainer {
+	margin-left: 16px;
+}
+.ly_footer_iconContainerInner {
+	display: flex;
+	flex-wrap: wrap;
+}
+.ly_footer_phoneNumberBox {
+	display: flex;
+}
+.ly_footer_info_icon {
+	margin-left: auto;
+}
+.ly_footer_info_phoneNumber {
+	margin-right: auto;
+	padding-left: 8px;
+}
+/*フッターの装飾*/
+.bl_footer {
+	/*アクセスへのリンク*/
+	/*団体予約へのリンク*/
+	/*アイコンのホバー時の挙動*/
+	/*ツイッターアイコンの色*/
+	/*フェイスブックアイコンの色*/
+	/*インスタアイコンの色*/
+}
+.bl_footer_tit {
+	font-size: .875em;
+}
+.bl_footer_access_img img {
+	color: #fff;
+	width: 2em;
+}
+.bl_footer_access_img i {
+	color: #333;
+	font-size: 2em;
+}
+.bl_footer_access_img img:hover,
+.bl_footer_access_img i:hover,
+.bl_footer_copyTwitter > a:hover,
+.bl_footer_copyFacebook > a:hover,
+.bl_footer_copyInstagram > a:hover {
+	color: #fff;
+	opacity: .5;
+}
+.bl_footer_copyTwitter a {
+	color: #1DA1F2;
+}
+.bl_footer_copyFacebook a {
+	color: #3C5A99;
+}
+.bl_footer_copyInstagram a {
+	color: #F26939;
+}
+.bl_footer_info_icon {
+	color: #fff;
+	font-size: 1.75em;
+}
+.bl_footer_info_phoneNumber {
+	color: #fff;
+	font-size: 1.5em;
+	white-space: nowrap;
+}
+@media screen and (max-width: 480px) {
+	.tab-flexRow {
+		display: block;
+	}
+	.bl_footer_icon {
+		font-size: 2em;
+		margin-right: .2em;
+	}
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+	.tab-flexRow {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+	}
+	.ly_footer_contactCopy, .ly_footer_info_busCopy {
+		margin-left: auto;
+		margin-right: 16px;
+	}
+	.ly_footer_phoneNumberBox, .ly_footer_info_address {
+		margin-right: auto;
+	}
+	.ly_footer_inner {
+		padding: 16px;
+	}
+	.bl_footer {
+		/*アクセスアイコン*/
+		/*団体予約アイコン*/
+		/*SNSの3つのアイコン*/
+	}
+	.bl_footer_tit {
+		font-size: 1.125em;
+		white-space: nowrap;
+	}
+	.bl_footer_access_img img {
+		width: 3em;
+	}
+	.bl_footer_access_img i {
+		font-size: 3em;
+	}
+	.bl_footer_icon {
+		font-size: 3em;
+		margin-right: .3em;
+	}
+}
+@media screen and (min-width: 769px) {
+	.tab-flexRow {
+		display: flex;
+	}
+	.ly_footer_info {
+		align-items: baseline;
+		display: flex;
+		justify-content: center;
+	}
+	.ly_footer_box {
+		margin: 0 auto;
+	}
+	.ly_footer_inner {
+		padding: 24px;
+	}
+	.ly_footer_contactCopy {
+		align-self: baseline;
+	}
+	.ly_footer_phoneNumberBox {
+		align-self: baseline;
+		margin: 0 16px;
+	}
+	.ly_footer_address {
+		margin: 0 auto;
+	}
+	.bl_footer_tit {
+		font-size: 1.25em;
+	}
+	.bl_footer_icon {
+		font-size: 3em;
+		margin-right: .3em;
+	}
+	/*アクセスアイコン*/
+	.bl_footer_access_img img {
+		width: 3em;
+	}
+	/*団体予約アイコン*/
+	.bl_footer_access_img i {
+		font-size: 3em;
+	}
+}

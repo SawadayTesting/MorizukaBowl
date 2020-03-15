@@ -1,0 +1,33 @@
+﻿<%# metaにページの基本情報を指定 %> <%# CSSが一枚の場合、pathは触らなくて大丈夫です %> <%# 下層ページにCSSを個別に当てる場合、値を'..'にして下さい(代入先参照) %> <%
+const meta = {
+  title: '施設案内',
+  description: '森塚ボウルへようこそ！',
+  path: '.'
+};
+%> <%- include('common/_meta',{meta:meta}) %>
+
+<body>
+	<div class="contentsWrapper"> <%- include('common/_header') %>
+		<!--/.header -->
+		<main class="facility sp-contShrink tab-contShrink pc-contShrink sp-headerSpace">
+			<h2>施設案内</h2>
+			<section class="uq-mbLarge">
+				<h3>ボウリングレーン</h3>
+				<p>２０本の通常レーンを有しております。<br class="tab-hidden pc-hidden">また <strong>VS ARASHI</strong> イベント時には特別仕様となります</p>
+				<p><small><span class="uq-red">※</span>VS ARASHIイベントの際は、通常レーンが18本となります</small></p>
+			</section>
+			<section class="uq-mbLarge">
+				<h3>アルマジロとふれあいコーナー</h3>
+				<p><img src="image/armadillo/publicdomainq-Armadillo.jpg" alt="の画像"></p>
+				<p>森塚ボウルでは２頭のアルマジロを飼育しており、実際に触れていただくこともできます</p>
+				<p>２頭の名前は「ツカモン」と「モリジロウ」です。<br class=" tab-hidden pc-hidden">画像はふれあいコーナーのツカモンです。</p>
+			</section>
+		</main>
+	</div>
+	<!--/.contentsWrapper--><%- include('common/_footer') %>
+	<!-- /.footer -->
+	<script src="js/swiper.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>

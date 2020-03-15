@@ -1,0 +1,53 @@
+﻿<%# metaにページの基本情報を指定 %> <%# CSSが一枚の場合、pathは触らなくて大丈夫です %> <%# 下層ページにCSSを個別に当てる場合、値を'..'にして下さい(代入先参照) %> <%
+const meta = {
+  title: '団体予約',
+  description: '森塚ボウルへようこそ！',
+  path: '.'
+};
+%> <%- include('common/_meta',{meta:meta}) %>
+
+<body>
+	<div class="contentsWrapper"> <%- include('common/_header') %>
+		<!--/.header -->
+		<main class="reservations sp-headerSpace">
+			<h2>団体予約</h2>
+			<p>ボウリングレーンの時間貸し、VS 嵐コーナー、カフェテリアを<br>ご利用のお客様は、こちらから必須項目をご入力ください。</p>
+			<p><small><span class=uq-red>※</span>団体予約は３名以上から受け付けさせていただきます。</small></p>
+			<form class="contactForm" action="sample.php" method="post">
+				<dl>
+					<dt><label for="your-name">名前（必須）:</label></dt>
+					<dd><input class="inputArea" type="text" name="your-name" id="your-name" placeholder="全角で入力してください。" required></dd>
+					<dt><label for="your-kana">フリガナ（任意）：</label></dt>
+					<dd><input class="inputArea" type="text" name="your-kana" id="your-kana" placeholder="全角カタカナで入力してください。"></dd>
+					<dt><label for="your-tel">電話番号（必須）：</label></dt>
+					<dd><input class="inputArea" type="tel" name="your-tel" id="your-tel" placeholder="ハイフンなしの半角数字で入力してください。" required></dd>
+					<dt><label for="your-email">メールアドレス（必須）：</label></dt>
+					<dd><input class="inputArea" type="email" name="your-email" id="your-email" placeholder="半角で入力してください。" required></dd>
+					<dt><label for="your-reservation">ご予約内容（必須）：</label></dt>
+					<dd><label><input class="radio" type="radio" name="your-reservation" id="your-reservation" value="your-reservation" required>時間貸し</label></dd>
+					<dd><label><input class="radio" type="radio" name="your-reservation" id="your-resevation" value="your-reservation" required>VS 嵐</label></dd>
+					<dd><label><input class="radio" type="radio" name="your-reservation" id="your-resevation" value="your-reservation" required>カフェテリア</label></dd>
+					<dt><label for="date">ご利用日時（必須）：</label></dt>
+					<dd><input id="date" type="date" name="calendar" max="9999-12-31" value="date" required>
+					</dd>
+					<dt><label for="group-members">ご利用人数（必須）：</label></dt>
+					<dd><select name="group-members" id="group-members" required>
+							<option value="group-members" selected>選択して下さい</option>
+							<option value="group-members">3</option>
+							<option value="group-members">4</option>
+							<option value="group-members">5</option>
+							<option value="group-members">6</option>
+							<option value="group-members">7</option>
+							<option value="group-members">8</option>
+							<option value="group-members">9名以上</option>
+						</select></dd>
+				</dl>
+				<input class="contactForm__button" type="submit" name="button" value="送信">
+			</form>
+		</main>
+	</div>
+	<!--/.contentsWrapper--> <%- include('common/_footer') %>
+	<!-- /.footer -->
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+﻿<%# metaにページの基本情報を指定 %> <%# CSSが一枚の場合、pathは触らなくて大丈夫です %> <%# 下層ページにCSSを個別に当てる場合、値を'..'にして下さい(代入先参照) %> <%
+const meta = {
+  title: 'イベント一覧',
+  description: '森塚ボウルへようこそ！',
+  path: '.'
+};
+%> <%- include('common/_meta',{meta:meta}) %>
+
+<body>
+	<div class="contentsWrapper"> <%- include('common/_header') %>
+		<!--/.header -->
+		<main class="eventList sp-contShrink tab-contShrink pc-contShrink sp-headerSpace">
+			<h2 class="eventList_headding2">イベント一覧</h2>
+			<div class="eventList_container uq-mbLarge">
+				<div class="eventList_container_box">
+					<h3 id="renewal" class="eventList_container-tit">リニューアルイベントの開催</h3>
+				</div>
+				<!-- /.sp-contShrink -->
+				<p><img src="image/other/bowler01.jpg" alt="リニューアルイベントへのリンク"></p>
+				<p>10回連続ストライク出来たら100万円キャンペーンを実施します！</p>
+				<p><span class="uq-red">※</span>免責事項</p>
+				<ul>
+					<li>ご希望のお客様が多数の場合、一時的に受付を制限することがございます</li>
+					<li>スプリットなど特殊な並び方が発生します</li>
+					<li>予告なく早期終了する場合があります</li>
+				</ul>
+				<p>3月23日まで毎日開催</p>
+				<p id="reservationsLink" class="uq-tac"><a class="btn btn-success" href="reservations.html" role="button">予約ページへと進む</a></p>
+			</div>
+			<!--/.eventList__container__box-->
+			<div class="eventList_container_box uq-mbLarge">
+				<h3 id="vsArashi" 　class="eventList_container_tit">VS ARASHI</h3>
+				<p><img src="image/other/bowler02.jpg" alt="VS嵐へのリンク"></p>
+				<p>流れてくるピンを狙って倒そう！要予約</p>
+				<p>イベント時は特別仕様のレーンをご用意。</p>
+				<p>毎月第二、第四日曜日に開催</p>
+				<p id="reservationsLink" class="uq-tac"><a class="btn btn-success" href="reservations.html" role="button">予約ページへと進む</a></p>
+			</div>
+			<!--/.eventList_container_box-->
+			<div class="eventList_container_box uq-mbLarge">
+				<h3 id="vrDay" class="eventList_container_tit">VR Day</h3>
+				<p><img src="image/other/bowler03.jpg" alt="VR DAY へのリンク"></p>
+				<p>VRとボウリングのコラボ！</p>
+				<p>大空や、水中でのボウリングを仮想体験！</p>
+				p{毎月第一、第三日曜日}
+				<p id="reservationsLink" class="uq-tac"><a class="btn btn-success" href="reservations.html" role="button">予約ページへと進む</a></p>
+			</div>
+			<!--/.eventList_container_box-->
+			<div class="eventList_container_box uq-mbLarge">
+				<h3 id="morizukaBattleDay" class="eventList_container_tit">MORIZUKA BATTLE Day</h3>
+				<p class="reset"><img src="image/other/bowler04.jpg" alt="SPECIAL BATTLE DAY へのリンク"></p>
+				<p>隣あったチーム同士でスコアの競争！</p>
+				<p>店員が進行を勤めますので、安心してご利用ください。勝利チームには、隣接のカフェテリアで使えるドーナッツ無料券を進呈！</p>
+				<p>第二、第四土曜日に開催。</p>
+				<p id="reservationsLink" class="uq-tac"><a class="btn btn-success" href="reservations.html" role="button">予約ページへと進む</a></p>
+			</div>
+			<!--/.eventList__container__box-->
+		</main>
+	</div>
+	<!--/.contentsWrapper--> <%- include('common/_footer') %>
+	<!-- /.footer -->
+	<script src="js/swiper.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>

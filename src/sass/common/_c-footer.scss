@@ -1,0 +1,177 @@
+@charset "utf-8";
+/*フッターのレイアウト*/
+.ly_footer {
+	width: 100%;
+	padding-top: 20px;
+	background-color: #{$bgc-footer};
+	&_inner {
+		padding: 8px;
+	}
+	&_containerLink {
+		display: flex;
+		justify-content: space-around;
+		align-items: baseline;
+	}
+	&_iconContainer {
+		margin-left: 16px;
+	}
+	&_iconContainerInner {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	&_phoneNumberBox {
+		display: flex;
+	}
+	&_info {
+		&_icon {
+			margin-left: auto;
+		}
+		&_phoneNumber {
+			margin-right: auto;
+			padding-left: 8px;
+		}
+	}
+}
+/*フッターの装飾*/
+.bl_footer {
+	&_tit {
+		font-size: .875em;
+		//white-space: nowrap;//大事
+	}
+	/*アクセスへのリンク*/
+	&_access_img img {
+		width: 2em;
+		color: #fff;
+	}
+	/*団体予約へのリンク*/
+	&_access_img i {
+		font-size: 2em;
+		color: #333;
+	}
+	/*アイコンのホバー時の挙動*/
+	&_access_img img:hover,
+	&_access_img i:hover, 
+	&_copyTwitter > a:hover, 
+	&_copyFacebook > a:hover, 
+	&_copyInstagram > a:hover {
+		color: #fff;
+		opacity: .5;
+	}
+	/*ツイッターアイコンの色*/
+	&_copyTwitter a {
+		color: #1DA1F2;
+	}
+	/*フェイスブックアイコンの色*/
+	&_copyFacebook a {
+		color: #3C5A99;
+	}
+	/*インスタアイコンの色*/
+	&_copyInstagram a {
+		color: #F26939;
+	}
+	&_info {
+		//連絡先の色
+		$phoneNumberColor: #fff;
+		&_icon {
+			color: $phoneNumberColor;
+			font-size: 1.75em;
+		}
+		&_phoneNumber {
+			color: $phoneNumberColor;
+			font-size: 1.5em;
+			white-space: nowrap;
+		}
+	}
+}
+@media #{$bp-sp} {
+	.tab-flexRow {
+		display: block;
+	}
+	.bl_footer {
+		&_icon {
+			font-size: 2em;
+			margin-right: .2em;
+		}
+	}
+}
+@media #{$bp-tab} {
+	.tab-flexRow {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.ly_footer {
+		&_contactCopy, &_info_busCopy {
+			margin-left: auto;
+			margin-right: 16px;
+		}
+		&_phoneNumberBox, &_info_address {
+			margin-right: auto;
+		}
+		&_inner {
+			padding: 16px;
+		}
+	}
+	.bl_footer {
+		&_tit {
+			font-size: 1.125em;
+			white-space: nowrap;
+		}
+		/*アクセスアイコン*/
+		&_access_img img {
+			width: 3em;
+		}
+		/*団体予約アイコン*/
+		&_access_img i {
+			font-size: 3em;
+		}
+		/*SNSの3つのアイコン*/
+		&_icon {
+			font-size: 3em;
+			margin-right: .3em;
+		}
+	}
+}
+@media #{$bp-pc} {
+	.tab-flexRow {
+		display: flex;
+	}
+	.ly_footer {
+		&_info {
+			display: flex;
+			justify-content: center;
+			align-items: baseline;
+		}
+		&_box {
+			margin: 0 auto;
+		}
+		&_inner {
+			padding: 24px;
+		}
+		&_contactCopy {
+			align-self: baseline;
+		}
+		&_phoneNumberBox {
+			margin: 0 16px;
+			align-self: baseline;
+		}
+		&_address {
+			margin: 0 auto;
+		}
+	}
+	.bl_footer_tit {
+		font-size: 1.25em;
+	}
+	.bl_footer_icon {
+		font-size: 3em;
+		margin-right: .3em;
+	}
+	/*アクセスアイコン*/
+	.bl_footer_access_img img {
+		width: 3em;
+	}
+	/*団体予約アイコン*/
+	.bl_footer_access_img i {
+		font-size: 3em;
+	}
+}

@@ -1,0 +1,10 @@
+@charset "utf-8";
+//必ずスマホ版サイトから作成して下さい
+.gmapContainer {
+	@include gmap;
+}
+.access {
+	width: 100%;
+	max-width: 720px;
+	margin: 0 auto;
+}

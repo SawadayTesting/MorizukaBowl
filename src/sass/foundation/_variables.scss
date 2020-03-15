@@ -1,0 +1,57 @@
+@charset "utf-8";
+//	-------------------------------------
+//	変数を指定するクラス
+//	変数にどんな数値を与えたのかを管理するのに使用
+//	-------------------------------------
+//	色関係の設定	-----------------
+//	ボディの文字色 p
+$c-font: #333; //黒文字
+//	ボディの背景色
+$bgc-body: #f3f1e8;
+//	ヘッダーの背景色
+$bgc-header: #ccc;
+//	フッターの背景色
+$bgc-footer: ;
+//	幅関係の設定	-----------------
+//	SPばんのヘッダーの高さ
+
+//	ブレイクポイント	----------------------
+//	メディアクエリなし 【スマートフォン縦】
+//	.scss側の記述例：@media#{$bp-sp} {}
+$bp-sp:edia "screen and"(max-width:480px);
+$bp-tab:edia "screen and"(min-width:481px)" and "(max-width:768px); //タブレット、スマホ横
+$bp-pc:edia"screen and"(min-width:769px); //PC/タブレット縦以上
+//	共通モジュール@mixin	-------------------
+
+
+
+
+
+//	便利な@mixin	-------------------------
+@mixin reset {
+	margin: 0;
+	padding: 0;
+}
+@mixin clearFix {
+	&::after {
+		content: "";
+		clear: both;
+		display: block;
+	}
+}
+//googlemapをレスポンシブ対応
+@mixin gmap {
+	& {
+		height: 0;
+		overflow: hidden;
+		padding-bottom: 75%;
+		position: relative;
+	}
+	& iframe {
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+	}
+}

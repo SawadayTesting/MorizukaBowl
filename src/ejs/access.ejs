@@ -1,0 +1,30 @@
+﻿<%# metaにページの基本情報を指定 %> <%# CSSが一枚の場合、pathは触らなくて大丈夫です %> <%# 下層ページにCSSを個別に当てる場合、値を'..'にして下さい(代入先参照) %> <%
+const meta = {
+  title: 'イベント一覧',
+  description: '森塚ボウルへようこそ！',
+  path: '.'
+};
+%> <%- include('common/_meta',{meta:meta}) %>
+
+<body>
+	<div class="contentsWrapper"> <%- include('common/_header') %>
+		<!--/.header -->
+		<main class="access tab-contShrink sp-headerSpace">
+			<div class="sp-contShrink">
+				<h2>森塚ボウルへの<!--br class="tab-hidden pc-hidden"-->アクセス</h2>
+				<p>便利な送迎バスも運行中です。</p>
+			</div>
+			<!-- /.sp-contShrink -->
+			<div class="gmapContainer">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1428.645147167885!2d141.35372509265426!3d43.048936164350394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0b2987e6f692bd%3A0xb51ee6a088eeabb4!2z44CSMDY0LTA4MDkg5YyX5rW36YGT5pyt5bmM5biC5Lit5aSu5Yy65Y2X77yZ5p2h6KW_77yT5LiB55uu!5e0!3m2!1sja!2sjp!4v1583742435774!5m2!1sja!2sjp" width="768" height="432" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+			</div>
+			<!-- /.ly_gmapContainer -->
+		</main>
+	</div>
+	<!--/.contentsWrapper--> <%- include('common/_footer') %>
+	<!-- /.footer -->
+	<script src="js/swiper.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>

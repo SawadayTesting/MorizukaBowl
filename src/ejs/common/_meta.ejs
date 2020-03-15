@@ -1,0 +1,22 @@
+﻿<%# タイトルと概要だけ変数化してあります 使いやすいよう適宜編集して下さい %>
+<%# パスは下層ページを作る際に変更 値：".." %>
+<%# スクリプトを使う場合、コメントアウトを解除して下さい %>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="<%= meta.description %>">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--twitter card,ogp tag-->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="ユーザー名" />
+<meta property="og:url" content="記事のURL" />
+<meta property="og:title" content="記事のタイトル" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="画像URL" />
+<title><%= meta.title %></title>
+<link href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" rel="stylesheet">
+<!--fontAwesome-->
+<link rel="stylesheet" href="<%= meta.path %>/css/style.css">
+</head>

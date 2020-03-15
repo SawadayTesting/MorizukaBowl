@@ -1,0 +1,14 @@
+@charset "utf-8";
+@media#{$bp-pc} {
+	.eventList {
+		/*優先度の問題で、個別に記述。*/
+		width: 100%;
+		max-width: 960px;
+		padding: 0 15px;
+		margin: 0 auto;
+	}
+	.eventList img {
+		width: 100%;
+		max-width: 640px;
+	}
+}

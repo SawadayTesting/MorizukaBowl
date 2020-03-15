@@ -1,0 +1,195 @@
+@charset "utf-8";
+//必ずスマホ版サイトから作成して下さい
+.header {
+	background: #{$bgc-header};
+	padding: 10px;
+	width: 100%; //PC上書き。PC以外は100％
+}
+.ly-header_linkContainer {
+	width: 80px;
+	.spTab-header_accessLink_Img {
+		margin-right: 40px;
+	}
+}
+.spTab-header {
+	&_accessLink {
+		@include reset;
+		&_Img {
+			width: 32px;
+			height: 32px;
+			order: 1;
+		}
+	}
+}
+/*--------------------------
+	スマホ版ハンバーガーメニュー
+---------------------------*/
+@media #{$bp-pc} {
+	#nav-drawer {
+		display: none;
+	}
+}
+#nav-drawer {
+	position: relative;
+}
+/*チェックボックス等は非表示に*/
+.nav-unshown {
+	display: none;
+}
+/*アイコンのスペース*/
+#nav-open {
+	display: inline-block;
+	height: 22px;
+	vertical-align: middle;
+	width: 30px;
+	order: 10;
+}
+/*ハンバーガーの形をCSSで表現*/
+#nav-open span, #nav-open span:before, #nav-open span:after {
+	background: #555;
+	/*長さ*/
+	border-radius: 3px;
+	content: '';
+	cursor: pointer;
+	display: block;
+	height: 3px;
+	position: absolute;
+	/*線の太さ*/
+	width: 25px;
+}
+#nav-open span:before {
+	bottom: -8px;
+}
+#nav-open span:after {
+	bottom: -16px;
+}
+/*閉じる用の薄黒箇所*/
+#nav-close {
+	background: black;
+	display: none;
+	height: 100%;
+	left: 0;
+	opacity: 0;
+	position: fixed;
+	top: 0;
+	transition: .3s ease-in-out;
+	width: 100%;
+	z-index: 99;
+}
+/*メニューの中身*/
+#nav-content {
+	background: #fff;
+	/*最大幅（お好みで調整を）*/
+	height: 100%;
+	left: 0;
+	max-width: 330px;
+	overflow: auto;
+	position: fixed;
+	top: 0;
+	transform: translateX(-105%);
+	transition: .3s ease-in-out;
+	width: 90%;
+	z-index: 9999;
+	ul {
+		padding: 20px;
+	}
+	li {
+		font-size: 1.1em;
+		margin-bottom: 10px;
+	}
+	a {
+		text-decoration: none;
+		color: #333;
+	}
+}
+/*チェックがついたら表示させる*/
+#nav-input:checked ~ #nav-close {
+	display: block;
+	opacity: .5;
+}
+#nav-input:checked ~ #nav-content {
+	box-shadow: 6px 0 25px rgba(0, 0, 0, 0.15);
+	transform: translateX(0%);
+}
+.sp-header-logo-menu {
+	-ms-flex-pack: justify;
+	-ms-flex-align: start;
+	align-items: flex-start;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+/*ロゴやサイトタイトルをレイアウト*/
+.logo-area {
+	-ms-flex-order: -10;
+	order: -10;
+	&_logo {
+		width: 192px;
+		order: -10; //左へ
+	}
+}
+/*--------------------------
+	PC版ナビ
+---------------------------*/
+.pc-nav__gnav {
+	display: none;
+}
+@media#{$bp-sp} {
+	.contentsWrapper {
+		position: relative;
+	}
+	.header {
+		height: #{$h-header}; //headerの高さ
+		position: fixed;
+		z-index: 99;
+		top: 0; //大事
+	}
+	.sp-headerSpace {
+		padding-top: #{$h-header}; //headerの高さぶん余白
+	}
+}
+@media#{$bp-tab} {
+	.contentsWrapper {
+		position: relative;
+	}
+	.header {
+		height: #{$h-header}; //headerの高さ
+		position: fixed;
+		z-index: 99;
+		top: 0; //大事
+	}
+	.sp-headerSpace {
+		padding-top: #{$h-header}; //headerの高さぶん余白
+	}
+}
+@media #{$bp-pc} {
+	.header {
+		padding: 24px;
+		width: $w-nav; //headerの横幅180指定	
+	}
+	h1 img {
+		width: #{$w-nav}; //変数
+	}
+	.pc-nav {
+		position: sticky;
+		top: 0;
+		width: #{$w-nav}; //変数
+		&__gnav {
+			$ptNav: 24px; //ナビの余白指定
+			padding-top: -$ptNav;
+			display: block;
+			li {
+				font-size: 1.125em;
+				padding-top: $ptNav;
+			}
+			a {
+				color: #333;
+				text-decoration: none;
+			}
+			a:hover {
+				opacity: .5;
+				color: red;
+			}
+		}
+	}
+}
