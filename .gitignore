@@ -100,7 +100,7 @@ dw_php_codehinting.config
 # --------------------------------------
 
 .sass-cache/
-node_nodules/
+node_modules/
 *.css.map
 gulpfile.js
 GulpStart.command
